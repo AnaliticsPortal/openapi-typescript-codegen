@@ -1,5 +1,7 @@
 export const getHeaders = async (config: OpenAPIConfig, options: ApiRequestOptions): Promise<Headers> => {
-	const token = await resolve(options, config.TOKEN);
+	if (options.secured) {
+		const token = await resolve(options, config.TOKEN);
+	}
 	const username = await resolve(options, config.USERNAME);
 	const password = await resolve(options, config.PASSWORD);
 	const additionalHeaders = await resolve(options, config.HEADERS);
