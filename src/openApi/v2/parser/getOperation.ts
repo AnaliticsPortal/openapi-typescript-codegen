@@ -42,6 +42,13 @@ export const getOperation = (
         errors: [],
         results: [],
         responseHeader: null,
+        security: {
+            secured: !!op.security && op.security.length > 0,
+            optional:
+                !!op.security && op.security.length > 0
+                    ? false
+                    : op.security!.some(item => Object.keys(item).length == 0),
+        },
     };
 
     // Parse the operation parameters (path, query, body, etc).

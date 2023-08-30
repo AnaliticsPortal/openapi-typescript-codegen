@@ -1,5 +1,5 @@
 export const getHeaders = (config: OpenAPIConfig, options: ApiRequestOptions): Observable<HttpHeaders> => {
-	const token = options.secured ? await resolve(options, config.TOKEN) : undefined;
+	const token = options.security.secured ? await resolve(options, config.TOKEN) : undefined;
 	return forkJoin({
 		token,
 		username: resolve(options, config.USERNAME),

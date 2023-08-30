@@ -13,5 +13,8 @@ export interface Operation extends OperationParameters {
     errors: OperationError[];
     results: OperationResponse[];
     responseHeader: string | null;
-    secured: boolean;
+    security: {
+        secured: boolean;
+        optional: boolean;
+    };
 }
