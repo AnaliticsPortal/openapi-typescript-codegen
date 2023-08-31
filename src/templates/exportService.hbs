@@ -145,7 +145,10 @@ export class {{{name}}}{{{@root.postfix}}} {
 				{{/each}}
 			},
 			{{/if}}
-			security: {{{security}}}
+			security:{
+				secured: {{{security.secured}}},
+				optional: {{{security.optional}}}
+			}
 		});
 	}
 
