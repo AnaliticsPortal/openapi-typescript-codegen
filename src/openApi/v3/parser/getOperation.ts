@@ -50,7 +50,7 @@ export const getOperation = (
             optional:
                 !!op.security && op.security.length > 0
                     ? false
-                    : op.security!.some(item => Object.keys(item).length == 0),
+                    : op.security?.some(item => Object.keys(item).length == 0) ?? false,
         },
     };
 
