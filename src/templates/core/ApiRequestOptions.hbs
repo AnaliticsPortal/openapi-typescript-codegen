@@ -12,5 +12,8 @@ export type ApiRequestOptions = {
 	readonly mediaType?: string;
 	readonly responseHeader?: string;
 	readonly errors?: Record<number, string>;
-	readonly secured: boolean;
+	readonly security: {
+		secured: boolean;
+		optional: boolean;
+	};
 };
